@@ -9,8 +9,9 @@
 
 [% BLOCK label_contents ~%]
   [%~ IF label.barcode ~%]
-    \leavevmode
-    \code{[% label.barcode | escape_text | replace(' ', '\ ') %]}\\
+    \begin{pspicture}[shift=*](\barcodeWidth,\barcodeHeight)
+      \psbarcode{[% label.barcode | escape_text | replace(' ', '\ ') %]}{height=\barcodeHeight}{code128}
+    \end{pspicture}
     \tt [%%]
   [%~ END ~%]
   [%~ label.text | escape_text | replace('[\r\n]', ' \\\\ ') ~%]

@@ -17,6 +17,5 @@
 
 % Barcode dimensions.  Meant to be a reasonable default overridden as necessary
 % by each label spec sheet.
-\input{code128}
-\barcodeX=0.2mm
-\barcodeHeight=0.5cm
+\usepackage{pst-barcode}
+\psset{unit=1in}
